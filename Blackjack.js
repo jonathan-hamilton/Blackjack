@@ -77,7 +77,7 @@ function shuffleDeck(){
     }
 }
 
-function getCardSring(card){
+function getCardString(card){
     return card.value + ' of ' + card.suit;
 }
 
@@ -135,8 +135,7 @@ function checkForEndOfGame() {
     updateScores();
 
     if(gameOver){
-        while(dealerScore < playerScore
-            && playerScore <= 21
+        while( playerScore <= 21
             && dealerScore <= 21){
                 dealerCards.push(getNextCard());
                 updateScores();
@@ -169,12 +168,12 @@ function showStatus() {
 
     let dealerCardString = '';
     for(let i=0; i<dealerCards.length; i++){
-        dealerCardString += getCardSring(dealerCards[i]) + '\n';
+        dealerCardString += getCardString(dealerCards[i]) + '\n';
     }
 
     let playerCardString = '';
-    for(let i=0; i<dealerCards.length; i++){
-        playerCardString += getCardSring(playerCards[i]) + '\n';
+    for(let i=0; i<playerCards.length; i++){
+        playerCardString += getCardString(playerCards[i]) + '\n';
     }
 
     updateScores();
